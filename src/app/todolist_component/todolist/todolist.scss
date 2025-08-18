@@ -1,0 +1,61 @@
+
+
+.todo-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+
+  mat-card-header {
+    text-align: center;
+
+    mat-card-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #3f51b5; // Material primary color
+    }
+  }
+
+  .todo-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .todo-input-field {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    button {
+      height: 40px;
+    }
+  }
+
+  mat-list {
+    mat-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+
+      span {
+        font-size: 1rem;
+      }
+
+      button {
+        min-width: 36px;
+      }
+    }
+  }
+
+  /* Optional: Clear All button styling if used */
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      width: 120px;
+    }
+  }
+}

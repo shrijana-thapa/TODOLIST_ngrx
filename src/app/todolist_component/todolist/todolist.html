@@ -1,1 +1,31 @@
-<p>todolist works!</p>
+<mat-card class="todo-container" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Todo List (NgRx)</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Input and Add Button -->
+    <div class="todo-input">
+      <mat-form-field appearance="fill" class="todo-input-field">
+        <mat-label>Enter a todo</mat-label>
+        <input matInput [(ngModel)]="newTodo" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addTodo()">Add</button>
+    </div>
+
+    <!-- Todo List -->
+    <mat-list>
+      <mat-list-item *ngFor="let todo of todos$ | async; let i = index">
+        <span>{{ todo }}</span>
+        <button mat-icon-button color="warn" (click)="removeTodo(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+
+  <!-- Optional Clear All Button -->
+  <!-- <mat-card-actions>
+    <button mat-stroked-button color="warn" (click)="clearAll()">Clear All</button>
+  </mat-card-actions> -->
+</mat-card>
