@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { addTask, removeTask } from '../../store/todolist.actions';
+import { addTask, removeTask,clearTodo } from '../../store/todolist.actions';
 import { getTOdo } from '../../store/todolist.selectors';
 import { todoState } from '../../store/todolist.state';
 
@@ -24,6 +24,10 @@ export class Todolist {
   this.store.dispatch(addTask({todo:this.newTodo}));
   this.newTodo='';
 
+  }
+
+  clearTodo(){
+    this.store.dispatch(clearTodo());
   }
 
 removeTodo(index:number){
